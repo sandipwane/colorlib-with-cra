@@ -2,11 +2,14 @@
 import React, { memo, useEffect } from "react";
 import validate from "./validation";
 import image01 from "../images/img-01.png";
-
-
+import "tilt.js";
 const Login = memo(function Login() {
   useEffect(() => {
     validate();
+    const $ = window.$ || window.jQuery;
+    $(".js-tilt").tilt({
+      scale: 1.1
+    });
   }, []);
   return (
     <div className="limiter">
